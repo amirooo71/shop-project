@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Bunny Sport</title>
+
+        <!-- Bootstrap -->
+        <link href="{{PATH}}/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{PATH}}/assets/css/myStyle.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--Header-->
+        <nav class="navbar navbar-default navbar-inverse" style="border-radius: 0px; margin-bottom: 0px;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Bunny Sport</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user is defined %}
+                        <li><a href="#">Welocme <strong style="color: #fff;">{{user.first_name}}</strong></a></li>
+                        {% endif %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                {% if user is defined %}
+                                <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+                                {% else %}
+                                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                {% endif %}
+                                <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!--End Header-->
+        {% for m in message %}
+            <div class="alert alert-danger">{{m}}</div>
+        {% endfor %}
+        {% block content %}
+            <!--Silde Show-->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="{{PATH}}/images/2000-700.png" alt="image-backgorund">
+                        <div class="carousel-caption">
+                            <h3>Title Here 1</h3>
+                            <p>Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{PATH}}/images/2000-700.png" alt="image-backgorund">
+                        <div class="carousel-caption">
+                            <h3>Title Here 2</h3>
+                            <p>Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{PATH}}/images/2000-700.png" alt="image-backgorund">
+                        <div class="carousel-caption">
+                            <h3>Title Here 3</h3>
+                            <p>Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="clearfix" style="margin-bottom: 20px;"></div>
+            <div class="container">          
+                <!--End Slide Show-->
+                <div class="row marketing">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <img src="images/cart.png" alt="marketing" class="img-circle">
+                        {% if cart.cartCount > 0 %}
+                            <h2>
+                                Cart : <span class="badge">{{cart.cartCount}}</span>
+                            </h2>
+                        {% else %}
+                            <h2>
+                                Cart : <span class="badge">empty Cart</span>
+                            </h2>
+                        {% endif %}
+                        <a href="cart.php" class="btn btn-default">Cart</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <img src="assets/images/thumb-140.png" alt="marketing" class="img-circle">
+                        <h2>Tilte Here</h2>
+                        <p>Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla </p>
+                        <a href="#" class="btn btn-default">Details...</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <img src="assets/images/thumb-140.png" alt="marketing" class="img-circle">
+                        <h2>Tilte Here</h2>
+                        <p>Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla </p>
+                        <a href="#" class="btn btn-default">Details...</a>
+                    </div>
+                </div>
+                <!--Marketing-->
+                <hr class="divider">
+                <!--Product Thumbnail-->
+                <div class="row">
+                    {% for p in product %}
+                        <div class="col-sm-6 col-md-3">
+                            <div class="thumbnail">
+                                <img src="files/thumb-250/{{p.id}}.{{p.ext}}" alt="...">
+                                <div class="caption">
+                                    <h3>{{p.name}}</h3>
+                                    <p>{{p.description}}</p>
+                                    <p><a href="addToCart.php?id={{p.id}}" class="btn btn-primary" role="button">Add To Cart</a> <a href="details.php?id={{p.id}}" class="btn btn-default" role="button">Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <!--End Product Thumbnail-->
+                    <hr class="divider">
+                    <footer>
+                        <p class="pull-right"><a href="#">Back To Up</a></p>
+                        <p>Design By Amir Shojaei . <a href="#">Privacy</a> . <a href="#">Terms</a></p>
+                    </footer>
+                </div>
+            {% endblock %}
+            <!--End Marketing-->
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="{{PATH}}/assets/js/jquery-1.12.4.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="{{PATH}}/assets/js/bootstrap.min.js"></script>
+    </body>
+</html>
+

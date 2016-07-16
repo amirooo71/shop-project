@@ -1,0 +1,24 @@
+{% extends "admin/layout.twig"%}
+
+
+{% block content %}
+    
+    <div class="container">
+        Category Parent : <strong>{{cat_name}}</strong>
+        <hr>
+        <div style="margin-bottom: 10px;"><a href="categoryCreate.php?parent_id={{parent_id}}" class="btn btn-primary">ADD CATEGORY</a></div>
+        <table class="table table-bordered table-condensed table-hover table-striped">
+            <th> -</th>
+            <th>Name</th>
+                {% for c in category %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td><a href="?parent_id={{c.id}}">{{c.name}}</a></td>
+                </tr>
+                {% else %}                   
+                        <div class="alert-info">No Ctegories Set!!!</div>
+                   
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

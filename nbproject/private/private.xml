@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/xampp/htdocs/shop-project/login.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/Cart.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/cart.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/details.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/loginVerify.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/product/infoProduct.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/login.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/register.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/register.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/index.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/init.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/layout.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/function.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/admin/dashboard.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/cart.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/UserLogin.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/product/categoryCreate.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/checkout.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/product/categoryList.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/product/listProduct.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/dashboard.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/AdminLogin.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/logout.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/admin/index.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/Register.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/admin/logout.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/composer.lock</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/layout.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/product/add.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/details.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/templates/admin/index.twig</file>
+            <file>file:/E:/xampp/htdocs/shop-project/LoginVerify.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/Order.php</file>
+            <file>file:/E:/xampp/htdocs/shop-project/includes/Db.php</file>
+        </group>
+    </open-files>
+</project-private>

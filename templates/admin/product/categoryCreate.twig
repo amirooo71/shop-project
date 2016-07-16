@@ -1,0 +1,14 @@
+{% extends "admin/layout.twig"%}
+
+{% block content %}
+    <div class="container">
+        Insert Into : <strong>{{cat_name}}</strong>
+        <form action="" method="post">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" name="name">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}

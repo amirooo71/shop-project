@@ -1,0 +1,18 @@
+{% extends "admin/layout.twig"%}
+
+{% block content %}
+    <div class="container">
+        <table class="table table-bordered table-hover table-condensed">
+            <th>-</th>
+            <th>Product Name</th>
+                {% for p in product %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td><a href="infoProduct.php?id={{p.id}}">>>> {{p.name}}</a></td>
+                </tr>
+            {% else %}
+                <div class="alert-info" style="margin-bottom: 10px;"> No Product Set!!!</div>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}    

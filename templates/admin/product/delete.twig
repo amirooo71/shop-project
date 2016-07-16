@@ -1,0 +1,11 @@
+{% extends "admin/layout.twig"%}
+
+{% block content %}
+    <div class="container">
+        <form action="" method="post">
+            <div class="alert-danger">Do you really want to delete this item???</div><br>
+            <input type="submit" name="confrim" value="yes" class="btn btn-danger">
+            <input type="submit" name="confrim" value="no" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock %}

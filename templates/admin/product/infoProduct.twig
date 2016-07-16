@@ -1,0 +1,39 @@
+{% extends "admin/layout.twig"%}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="panel panel-default">
+            <table class="table table-bordered table-striped table-condensed">
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>QTY</th>
+                <th>SKU</th>
+                <th>Status</th>
+                <th>Category</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.qty}}</td>
+                    <td>{{product.sku}}</td>
+                    <td>{{product.status}}</td>
+                    <td>
+                        {% for c in category %}
+                            {{c.name}} - 
+                        {% endfor %}
+                    </td>
+                    <td><a href="{{PATH}}/admin/product/update.php?id={{product.id}}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="{{PATH}}/admin/product/delete.php?id={{product.id}}"><span class="glyphicon glyphicon-remove"></span></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+{% endblock %}

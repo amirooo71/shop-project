@@ -1,0 +1,56 @@
+{% extends "admin/layout.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <strong>ADD PRODUCT</strong>
+                </div>
+                <div class="panel-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" placeholder="description" name="description">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select name="categories[]" multiple="">
+                                {% for c in cat%}
+                                <option class="form-control" value="{{c.id}}">{{c.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="text" class="form-control" placeholder="price" name="price">
+                        </div>
+                        <div class="form-group">
+                            <label>QTY</label>
+                            <input type="number" class="form-control" placeholder="quantity" name="qty">
+                        </div>
+                        <div class="form-group">
+                            <label>SKU</label>
+                            <input type="text" class="form-control" placeholder="sku" name="sku">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <input type="text" class="form-control" placeholder="status" name="status">
+                        </div>                     
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="file">
+                        </div>                     
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}
